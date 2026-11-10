@@ -1,0 +1,17 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"><title>ÑAPA · Control</title>
+<style>*{box-sizing:border-box;margin:0;-webkit-tap-highlight-color:transparent}body{height:100dvh;background:#F92D1A;color:#FFF3E1;font-family:"DM Sans",system-ui,sans-serif;display:flex;flex-direction:column;padding:20px;gap:16px;user-select:none}
+.d{font-family:Funtastic,"Arial Black",Impact,sans-serif}header{display:flex;justify-content:space-between;align-items:center}.dot{width:16px;height:16px;border-radius:50%;background:#555;display:inline-block;margin-right:8px}.dot.ok{background:#3dff8b}
+#num{text-align:center;font-size:96px;line-height:1}#ttl{text-align:center;font-size:24px;font-weight:700;min-height:32px}
+.bar{height:12px;background:#0003;border-radius:6px;overflow:hidden}.bar i{display:block;height:100%;background:#FF8E00;width:0;transition:.3s}
+.btns{flex:1;display:grid;grid-template-columns:1fr 2fr;gap:16px}button{border:none;border-radius:32px;font:900 64px "Arial Black",sans-serif;color:#FFF3E1;background:#2E4C8C;touch-action:manipulation}button:active{transform:scale(.96)}#n{background:#FF8E00;color:#111}
+.s{display:flex;gap:12px}.s button{font-size:22px;padding:16px;flex:1;border-radius:20px;background:#0003}</style></head><body>
+<header><b class="d" style="font-size:34px">ÑAPA</b><span><i class="dot" id="d"></i><span id="st">Conectando…</span></span></header>
+<div id="num" class="d">–</div><div id="ttl"></div><div class="bar"><i id="pr"></i></div>
+<div class="btns"><button id="p">‹</button><button id="n">›</button></div>
+<div class="s"><button id="a">⏮ Inicio</button><button id="z">Final ⏭</button></div>
+<script>const k=new URLSearchParams(location.search).get('k')||'',$=s=>document.getElementById(s);let ws,N=0;
+function conn(){ws=new WebSocket(`ws://${location.host}/ws?role=remote&k=${k}`);
+ws.onopen=()=>{$('d').classList.add('ok');$('st').textContent='Conectado'};ws.onclose=()=>{$('d').classList.remove('ok');$('st').textContent='Reconectando…';setTimeout(conn,1500)};
+ws.onmessage=e=>{const m=JSON.parse(e.data);if(m.t!=='state')return;N=m.n;$('num').textContent=`${m.i+1} / ${m.n||'–'}`;$('ttl').textContent=m.title||'';$('pr').style.width=m.n?((m.i+1)/m.n*100)+'%':'0'}}
+const tx=o=>{ws.readyState===1&&ws.send(JSON.stringify(o));navigator.vibrate&&navigator.vibrate(25)};
+$('n').onclick=()=>tx({t:'nav',d:1});$('p').onclick=()=>tx({t:'nav',d:-1});$('a').onclick=()=>tx({t:'goto',i:0});$('z').onclick=()=>tx({t:'goto',i:N-1});conn()</script></body></html>

@@ -1,0 +1,1 @@
+{"name":"napa-presentacion","version":"1.0.0","description":"Presentación interactiva ÑAPA con control remoto por QR","scripts":{"start":"node server.js"},"engines":{"node":">=16"},"license":"UNLICENSED"}
