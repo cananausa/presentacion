@@ -71,3 +71,19 @@ svg text{font-family:var(--t)}.bar{transform-box:fill-box;transform-origin:botto
 .vph{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;gap:20px;text-align:center;padding:80px;background:repeating-linear-gradient(135deg,#1a1a1a 0 30px,#141414 30px 60px);color:var(--c)}.novid .vph{display:flex}
 .vbar{position:absolute;left:0;right:0;bottom:0;height:10px;background:#fff3}.vbar i{display:block;height:100%;width:0;background:var(--o)}
 .vmute{position:absolute;right:24px;top:24px;border:none;border-radius:99px;padding:14px 26px;font:700 26px var(--t);background:var(--o);cursor:pointer}
+
+/* transiciones variadas (tx0 = cortina original). Al retroceder siempre se usa un fundido suave. */
+.slide.enter{animation-duration:.85s;animation-timing-function:cubic-bezier(.7,0,.2,1);animation-fill-mode:both}
+.slide.enter.tx1{animation-name:t-circ}.slide.enter.tx2{animation-name:t-up}.slide.enter.tx3{animation-name:t-diag}.slide.enter.tx4{animation-name:t-zoom}
+.slide.enter.tx5{animation-name:t-right}.slide.enter.tx6{animation-name:t-iris}.slide.enter.tx7{animation-name:t-corner}.slide.enter.tx8{animation-name:t-split}.slide.enter.tx9{animation-name:t-down}
+.slide.enter.back{animation-name:t-fadeb!important;animation-duration:.6s}
+@keyframes t-circ{from{clip-path:circle(0% at 50% 50%)}to{clip-path:circle(75% at 50% 50%)}}
+@keyframes t-up{from{clip-path:inset(100% 0 0 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes t-down{from{clip-path:inset(0 0 100% 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes t-diag{from{clip-path:polygon(0 0,0 0,0 0)}to{clip-path:polygon(0 0,220% 0,0 220%)}}
+@keyframes t-zoom{from{opacity:0;transform:scale(1.3)}to{opacity:1;transform:none}}
+@keyframes t-right{from{transform:translateX(100%)}to{transform:none}}
+@keyframes t-iris{from{clip-path:inset(50% 50% 50% 50%)}to{clip-path:inset(0 0 0 0)}}
+@keyframes t-corner{from{clip-path:circle(0% at 100% 100%)}to{clip-path:circle(150% at 100% 100%)}}
+@keyframes t-split{from{clip-path:inset(0 50% 0 50%)}to{clip-path:inset(0 0 0 0)}}
+@keyframes t-fadeb{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:none}}
