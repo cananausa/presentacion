@@ -11,11 +11,12 @@ addEventListener('resize',fit);document.addEventListener('fullscreenchange',fit)
 function count(el,skipSteps){el.querySelectorAll('[data-count]').forEach(b=>{if(skipSteps&&b.closest('[data-step]'))return;const n=+b.dataset.count,dec=+(b.dataset.dec||0),t0=performance.now(),f=x=>{const p=Math.min(1,(x-t0)/1600),e=1-Math.pow(1-p,3);
  b.textContent=(b.dataset.pre||'')+(n*e).toLocaleString('es-CO',{minimumFractionDigits:dec,maximumFractionDigits:dec})+(b.dataset.suf||'');if(p<1)requestAnimationFrame(f)};requestAnimationFrame(f)})}
 // go(i,full): full=true muestra todas las tarjetas (saltos, retroceso); full=false entra con solo los elementos fijos.
+const TX=[0,1,2,3,4,5,6,7,8,9]; // variedad: cada diapositiva usa un efecto de entrada distinto (0 = cortina original); reordena o repite números a gusto
 function go(i,full=true){i=Math.max(0,Math.min(N-1,i));if(i===cur)return;const back=i<cur,old=cur>=0?SL[cur]:null,nw=SL[i];
  box.querySelectorAll('.leave').forEach(e=>e.classList.remove('leave'));
  if(old){old.off&&old.off(old.el);old.el.classList.remove('active','enter','back');old.el.classList.add('leave');setTimeout(()=>old.el.classList.remove('leave'),900)}
  nw.stepEls.forEach(x=>x.classList.toggle('show',full));step=full?nw.stepEls.length:0;
- nw.el.classList.remove('leave');nw.el.classList.add('active');if(old){nw.el.classList.add('enter');back&&nw.el.classList.add('back');setTimeout(()=>nw.el.classList.remove('enter','back'),900)}
+ nw.el.classList.remove('leave');nw.el.classList.add('active');if(old){nw.el.className=nw.el.className.replace(/\s*tx\d+/g,'');nw.el.classList.add('enter','tx'+TX[i%TX.length]);back&&nw.el.classList.add('back');setTimeout(()=>nw.el.classList.remove('enter','back'),900)}
  cur=i;nw.on&&nw.on(nw.el);count(nw.el,!full);
  document.querySelectorAll('#prog i').forEach((p,k)=>{p.className=k<i?'done':k===i?'cur':''});$('#cnt').textContent=`${i+1} / ${N}`;history.replaceState(null,'','#'+(i+1));report()}
 const S=()=>SL[cur].stepEls;
