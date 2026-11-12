@@ -34,13 +34,13 @@ const SL=[
 {t:'Evidencia de campo',c:'blue',h:()=>`
  <div class="kick o" ${A(0)}>02 · El problema, comprobado en la calle</div>
  <div class="row" style="gap:70px">
-  <div style="flex:1.1"><h2 style="font-size:92px" ${A(.1)}>«El negocio de barrio que triunfa vende <span class="o">una persona</span>, no una marca.»</h2>
-   <p class="sm" style="margin-top:30px" ${A(.4)}>Hallazgo del análisis de competencia · Santa Marta</p></div>
+  <div style="flex:1.1"><h2 style="font-size:92px" ${A(.1)}>«Las barberías de barrio <span class="o">van y vienen</span>, y eso es normal»</h2>
+   <p class="sm" style="margin-top:30px" ${A(.4)}>Hallazgo del análisis de competencia · Los dueños normalizaron que es cuestión de suerte el tener éxito.</p></div>
   <div class="grid g2" style="flex:1;gap:24px">
-   <div class="card bg-c stat" ${A(.5)}>${N(5)}<span>negocios entrevistados · 3 barberías y 2 salones, en 3 barrios</span></div>
-   <div class="card bg-r stat" ${A(.65)}>${N(62)}<span>negocios rastreados en Google Maps; en barrio casi todos tienen 0–8 reseñas</span></div>
+   <div class="card bg-c stat" ${A(.5)}>${N(8)}<span>negocios entrevistados · 5 barberías y 3 salones, en 4 barrios</span></div>
+   <div class="card bg-r stat" ${A(.65)}>${N(162)}<span>negocios rastreados en Google Maps; en barrio casi todos tienen 0–8 reseñas</span></div>
    <div class="card bg-o stat" ${A(.8)}><b style="font-size:64px;padding:22px 0">$15–25 mil</b><span>corte en barrio, contra $35–50 mil en zona turística</span></div>
-   <div class="card bg-k stat" ${A(.95)}><b style="font-size:64px;padding:22px 0">Nº 1</b><span>queja en reseñas: la espera mal gestionada y sin claridad de cuánto tocará esperar</span></div></div></div>`},
+   <div class="card bg-k stat" ${A(.95)}><b style="font-size:64px;padding:22px 0">Nº 1</b><span>Dificultad de todos: no pueden crecer porque los clientes dejan de ir al negocio</span></div></div></div>`},
 {t:'Cliente y usuario',c:'cream',h:()=>`
  <div class="kick rr" ${A(0)}>04 · Cliente y usuario: la misma persona</div>
  <h2 style="font-size:96px" ${A(.1)}>El dueño paga <span class="rr">y</span> usa ÑAPA.</h2>
@@ -49,14 +49,14 @@ const SL=[
   <div class="card bg-r f"><p class="sm">USO 1</p><p><b>Registra visitas</b> en 3 toques y cobra con el descuento de la membresía.</p></div>
   <div class="card bg-b f"><p class="sm">USO 2</p><p><b>Ve quién vuelve</b> y quién se va: al día, recordar, en riesgo y perdidos.</p></div>
   <div class="card bg-o f"><p class="sm">USO 3</p><p><b>Avisa por WhatsApp</b> y administra sus membresías.</p></div></div>
- <div class="card bg-k f" style="margin-top:28px;display:flex;gap:30px;align-items:center"><span class="pill" style="flex:none">Beneficiario</span><p>Su cliente final solo <b>consulta su membresía</b> (celular + código de 4 dígitos). No paga a ÑAPA: es la razón por la que el dueño la usa.</p></div>`},
+ <div class="card bg-k f" style="margin-top:28px;display:flex;gap:30px;align-items:center"><span class="pill" style="flex:none">Beneficiario</span><p>Su cliente final solo <b>consulta su membresía</b> (celular + código de 4 dígitos). No paga a ÑAPA sino a la barbería.</p></div>`},
 {t:'La solución',c:'red',h:()=>`
  <div class="ghost" style="left:-120px;bottom:-200px;width:620px">${MK()}</div>
  <div class="kick" ${A(0)}>04 · La solución</div><h2 ${A(.1)}>ÑAPA: la membresía <span class="o">de barrio.</span></h2>
- <p style="max-width:1300px;margin:28px 0 60px" ${A(.3)}>Un CRM en el celular: el dueño registra visitas, ve quién vuelve y avisa por WhatsApp. El cliente recibe un carné digital con beneficios que crecen y que comparte con su familia.</p>
+ <p style="max-width:1300px;margin:28px 0 60px" ${A(.3)}>Un CRM en el celular: el dueño registra visitas, ofrece membresías familiares, ve quién vuelve y avisa por WhatsApp. El cliente recibe un carné digital con beneficios que crecen y que comparte con su familia y amigos.</p>
  <div class="flow">
-  ${[['1','Registro del cliente'],['2','Membresía mensual o compartida'],['3','Beneficios y recompensas'],['4','Crecimiento del negocio']].map((s,i)=>`<div class="st" ${A(.6+i*.25)}><em>${s[0]}</em><p><b>${s[1]}</b></p></div>`).join('')}</div>
- <div class="chips" style="margin-top:50px;justify-content:center" ${A(1.8)}>${['Sin membresía','Personal','Familiar','VIP'].map(x=>`<span class="pill">${x}</span>`).join('')}</div>`},
+  ${[['1','Registro del cliente'],['2','Membresía mensual compartida'],['3','Beneficios y recompensas'],['4','Crecimiento del negocio']].map((s,i)=>`<div class="st" ${A(.6+i*.25)}><em>${s[0]}</em><p><b>${s[1]}</b></p></div>`).join('')}</div>
+ <div class="chips" style="margin-top:50px;justify-content:center" ${A(1.8)}>${['Sin trámites','Personal','Familiar','Personalizada a cada negocio'].map(x=>`<span class="pill">${x}</span>`).join('')}</div>`},
 {t:'Demostración',c:'blue',h:()=>`
  <div class="row" style="gap:110px;align-items:center;height:100%">
   <div class="phone" ${A(.2)} style="flex:none">
@@ -81,7 +81,7 @@ const SL=[
 {t:'Mercado',c:'blue',h:()=>{const L=v=>(Math.log10(v)/Math.log10(261000)*100).toFixed(1)+'%',rows=[['261.000','Peluquerías y salones en Colombia',261000,'var(--c)','var(--b)'],['44.432','Registrados en cámaras de comercio',44432,'var(--o)','var(--k)'],['≈2.838','Negocios en Santa Marta (estimado, con informales)',2838,'var(--c)','var(--b)'],['1.362','Alcanzables en Santa Marta: pueden pagar y usan celular',1362,'var(--r)','var(--c)'],['28','Pagan ÑAPA en el mes 12 · 2,1 % del alcanzable',28,'var(--o)','var(--k)']];
  return`<div class="kick o" ${A(0)}>07 · Mercado</div><h2 style="font-size:90px" ${A(.1)}>De 261.000 negocios a los <span class="o">28 primeros.</span></h2>
  <div class="col" style="gap:20px;margin-top:44px">${rows.map((r,i)=>`<div class="row" style="align-items:center;gap:24px"><div class="hb" style="--d:${.4+i*.2}s;width:${L(r[2])};min-width:230px;background:${r[3]};color:${r[4]}"><span class="d" style="font-size:42px">${r[0]}</span></div><span style="font-size:27px;max-width:760px;line-height:1.2" ${A(.7+i*.2)}>${r[1]}</span></div>`).join('')}</div>
- <p class="sm" style="position:absolute;left:130px;bottom:70px" ${A(1.8)}>Escala logarítmica. Cámara de Comercio de Santa Marta solo registra 290; los informales podrían ser ~10 veces más. Cifra a validar.</p>`}},
+ <p class="sm" style="position:absolute;left:130px;bottom:70px" ${A(1.8)}>Cámara de Comercio de Santa Marta registra 290 y dice que los informales podrían ser ~10 veces más. En Bogotá, las peluquerías generan alrededor de 500,000 millones de pesos anuales.</p>`}},
 {t:'Precio y competencia',c:'cream',h:()=>`
  <div class="kick rr" ${A(0)}>08 · Precio · base de todos los cálculos</div>
  <h2 ${A(.1)}>Un solo plan: <span class="rr">$50.000</span> al mes.</h2>
@@ -103,10 +103,10 @@ const SL=[
  <div style="flex:1"><div class="kick rr" ${A(.2)}>10 · De qué se compone el precio</div>
   ${D.precioParts.map((p,i)=>`<div class="row" style="align-items:center;gap:20px;margin-bottom:18px" ${A(.4+i*.15)}><i style="width:34px;height:34px;border-radius:10px;background:${p.c};flex:none"></i><span style="font-size:32px;flex:1">${p.n}</span><b class="d" style="font-size:44px">${COP(p.v)}</b></div>`).join('')}
   <div class="card bg-b f" style="margin-top:30px" ${A(1.1)}><p>Costo de producir y vender 1 app: <b class="o">$25.272</b>. Lo más caro es <b>conseguir al cliente</b>: $17.482 por venta (67 %).</p></div></div></div>`}},
-{t:'Indicadores clave',c:'blue',h:()=>{const K=[['Precio','$50.000','por app al mes · base de todo','bg-r'],['Costo variable por app','$26.210','incluye $937 de depreciación','bg-c'],['Margen de contribución','$22.736','aporte de cada app a los fijos','bg-o'],['Margen bruto','74,7 %','ventas − costos directos · $7.470.004','bg-c'],['Utilidad neta','37,5 %','$3.747.514 en 12 meses*','bg-c'],['Utilidad líquida','31,9 %','$3.185.276 tras depreciación y reservas','bg-r'],['Punto de equilibrio','4 apps/mes','= $200.000 en ventas · fijos $84.000/mes','bg-o'],['Inversión necesaria','$3.549.055','pagos únicos + colchón + imprevistos','bg-c']];
+{t:'Indicadores clave',c:'blue',h:()=>{const K=[['Precio','$50.000','por app al mes · base de todo','bg-r'],['Costo variable por app','$26.210','incluye $937 de depreciación','bg-c'],['Margen de contribución','$22.736','aporte de cada app a los fijos','bg-o'],['Margen bruto','74,7 %','ventas − costos directos · $7.470.004','bg-c'],['Utilidad neta','37,5 %','$3.747.514 en 12 meses','bg-c'],['Utilidad líquida','31,9 %','$3.185.276 tras depreciación y reservas','bg-r'],['Punto de equilibrio','4 apps/mes','= $200.000 en ventas · fijos $84.000/mes','bg-o'],['Inversión necesaria','$3.549.055','pagos únicos + colchón + imprevistos','bg-c']];
  return`<div class="kick o" ${A(0)}>11 · Resumen financiero · los indicadores se encadenan</div>
  <div class="grid g4" style="gap:22px;margin-top:6px">${K.map((k,i)=>`<div class="card f ${k[3]}" style="padding:30px 30px;min-height:300px" ${A(.15+i*.1)}><p class="sm" style="font-weight:700;letter-spacing:1px">${k[0].toUpperCase()}</p><div class="d" style="font-size:${k[1].length>9?58:76}px;margin:16px 0 10px">${k[1]}</div><p class="sm" style="line-height:1.25">${k[2]}</p></div>`).join('')}</div>
- <p class="sm" style="margin-top:26px" ${A(1.2)}>Precio → margen de contribución → punto de equilibrio. *El modelo no incluye impuesto de renta: la utilidad neta equivale al resultado operacional. Validar con el asesor contable.</p>`}},
+ <p class="sm" style="margin-top:26px" ${A(1.2)}>Precio → margen de contribución → punto de equilibrio. La utilidad neta equivale al resultado operacional. </p>`}},
 {t:'Proyección 12 meses',c:'cream',h:()=>{const W=1660,H=400,bw=78,g=(W-60)/12,mx=1500000,y=v=>H-v/mx*H;
  const bars=D.ingresos.map((v,i)=>`<rect class="bar" style="--i:${i}" x="${30+i*g+(g-bw)/2}" y="${y(v)}" width="${bw}" height="${v/mx*H}" rx="10" fill="var(--b)"/><text x="${30+i*g+g/2}" y="${H+36}" text-anchor="middle" font-size="24" fill="var(--b)" font-weight="700">${D.meses[i]}</text>`).join('');
  const pts=D.utilLiq.map((v,i)=>`${30+i*g+g/2},${y(v)}`).join(' L');
