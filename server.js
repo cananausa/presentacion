@@ -1,6 +1,6 @@
 // Servidor ÑAPA: estáticos + WebSocket (RFC 6455 implementado a mano, CERO dependencias).
 const http=require('http'),fs=require('fs'),path=require('path'),crypto=require('crypto'),os=require('os');
-const PORT=+process.env.PORT||3000,ROOT=path.join(__dirname,'public');
+const PORT=+process.env.PORT||3000,ROOT=__dirname;
 const TOKEN=process.env.TOKEN||crypto.randomBytes(3).toString('hex');
 const MIME={'.html':'text/html;charset=utf-8','.css':'text/css','.js':'text/javascript','.svg':'image/svg+xml','.png':'image/png','.jpg':'image/jpeg','.mp4':'video/mp4','.webm':'video/webm','.m4v':'video/mp4','.gif':'image/gif','.webp':'image/webp','.ico':'image/x-icon','.json':'application/json','.woff2':'font/woff2','.woff':'font/woff','.ttf':'font/ttf','.otf':'font/otf'};
 function lanIP(){let c=[];for(const l of Object.values(os.networkInterfaces()))for(const a of l||[])if(a.family==='IPv4'&&!a.internal)c.push(a.address);
