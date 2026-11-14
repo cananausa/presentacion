@@ -21,11 +21,10 @@ Sin servidor (doble clic en index.html) la presentación funciona, pero sin cont
 ## Orden de la sesión (guía del jurado)
 Primero se proyecta el **video sketch**; luego esta presentación: 2–3 Problema · 4 Cliente/usuario · 5–6 Solución y demo · 7 Validación (integrada) · 8–14 Mercado, precio, modelo y finanzas · 15 Recomendaciones · 16 Preguntas.
 
-## Datos a validar (inconsistencias entre archivos)
-- **Precio:** el Excel definitivo dice **$50.000/mes**; el Manual aún dice $45.000 → se usó $50.000.
-- **Costo por app:** Excel $25.272 (Manual: $25.945,48) y **proyección:** Excel 200 suscripciones/$10.000.000 en 12 meses (Manual: 44 apps/$1.980.000 en 6 meses) → se usó el Excel.
-- Excel, hoja Resumen: «utilidad acumulada ≥ 0 desde» y «meses sin equilibrio» muestran `#REF!`; no se usaron.
-- El Excel no calcula impuesto de renta ni «margen operacional» por separado: se presenta la utilidad neta (37,5 %) como tal. Margen bruto 74,7 % = utilidad bruta / ingresos.
-- Margen de contribución $22.736 = «lo que aporta cada app» del Excel (descuenta comisión/GMF, depreciación y reserva).
+## Datos a validar
+- **Fuente de cifras:** Excel «ESTRUCTURA DE COSTOS VERSIÓN FINAL ÑAPA». Precio **$65.000/mes**; costo por app $25.272; margen de contribución $37.451; equilibrio 49 apps/mes (fijos $1.834.905/mes).
+- **Proyección:** 899 suscripciones y $58.435.000 de ingresos en 12 meses (32 → 135 apps/mes); utilidad neta $12.585.961 (21,5 %); utilidad líquida $10.365.258 (17,7 %); margen bruto 80,5 %. Hay 3 meses con pérdida (dic–feb).
+- **Inversión:** inyección inicial $16.582.499 (pagos únicos $95.347 + colchón $14.979.652 + imprevistos $1.507.500). El registro de marca en la SIC queda en $0 porque el Excel tiene 0 clases a registrar.
+- **QR de la diapositiva «Demostración»:** sube `img/qr-mvp.png` (MVP) e `img/qr-admin.png` (Ñapa Admin). Hasta entonces se ve un recuadro vacío.
 - Envío automático por WhatsApp: el Manual lo marca «no comprobado».
 - Cifra de negocios en Santa Marta (≈2.838): estimación; la Cámara de Comercio solo reporta 290 registrados.
